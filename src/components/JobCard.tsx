@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useRouter } from 'next/router'; // Import useRouter for navigation
+
 
 type JobCardProps = {
   jobTitle: string;
@@ -17,17 +17,9 @@ export const JobCard: React.FC<JobCardProps> = ({
   salary,
   difficulty,
 }) => {
-  const router = useRouter();
-
-  // Function to handle card click and navigate to the job dashboard
-  const handleCardClick = () => {
-    // Here, we navigate to the JobDashboard page. You might want to pass job details through query params or state if needed.
-    router.push('/JobDashboard'); // Replace with the actual dynamic path if needed, e.g., `/JobDashboard/${jobTitle}`
-  };
 
   return (
     <div
-      onClick={handleCardClick} // Attach the click handler to navigate
       className="cursor-pointer border border-gray-300 rounded-2xl py-4 px-7 max-w-[350px] bg-gray-50 shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
       <h1 className="text-2xl font-bold mb-2">{jobTitle}</h1>
