@@ -19,3 +19,22 @@
     100% { transform: rotate(360deg); }
 }
   
+
+/* Custom hexagonal grid styling */
+.hex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    place-items: center;
+  }
+  
+  .hex-grid > * {
+    margin-bottom: -50px; /* Overlap to create hexagonal illusion */
+  }
+  
+  @media (min-width: 768px) {
+    .hex-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
