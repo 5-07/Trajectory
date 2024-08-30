@@ -12,15 +12,8 @@ export const jobData = [
 ];
 
 export const JobGrid: React.FC = () => (
-  <section className="bg-gradient-to-br from-slate-50 via-violet-300 to-slate-50 p-4 relative overflow-hidden">
-    {/* Background rings */}
-    <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
-      <div className="w-[620px] h-[620px] hero-ring"></div>
-      <div className="w-[820px] h-[820px] hero-ring"></div>
-      <div className="w-[1020px] h-[1020px] hero-ring"></div>
-      <div className="w-[1220px] h-[1220px] hero-ring"></div>
-    </div>
-
+  <section className="bg-gradient-to-br from-slate-50 via-violet-300 to-slate-50 p-4 relative overflow-hidden px-2">
+  
     {/* Job cards grid */}
     <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-20">
       {jobData.map((job, index) => (

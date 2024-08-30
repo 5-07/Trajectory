@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-
+import Link from 'next/link'; // Make sure to import Link from 'next/link' or your routing library
 
 type JobCardProps = {
   jobTitle: string;
@@ -20,23 +20,25 @@ export const JobCard: React.FC<JobCardProps> = ({
 
   return (
     <div
-      className="cursor-pointer border border-gray-300 rounded-2xl py-4 px-7 max-w-[350px] bg-gray-50 shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="cursor-pointer border border-gray-300 rounded-lg py-3 px-5 max-w-[300px] bg-gray-100 shadow-md hover:shadow-lg transition-shadow duration-300"
     >
-      <h1 className="text-2xl font-bold mb-2">{jobTitle}</h1>
-      <p className="mb-4 font-light">{jobDescription}</p>
+      <Link href={`/jobs/${jobTitle}`} className="text-xl font-bold mb-2 block text-blue-600 hover:underline">
+        {jobTitle}
+      </Link>
+      <p className="mb-3 font-light">{jobDescription}</p>
       <div className="flex flex-col gap-1">
         <div className="flex justify-between">
           <div className="font-light">TIMELINE:</div>
-          <div className="font-medium text-lg">{timeline}</div>
+          <div className="font-medium text-md">{timeline}</div>
         </div>
         <div className="flex justify-between">
           <div className="font-light">SALARY:</div>
-          <div className="font-medium text-lg">{salary}</div>
+          <div className="font-medium text-md">{salary}</div>
         </div>
         <div className="flex justify-between">
           <div className="font-light">DIFFICULTY:</div>
           <div
-            className={`font-semibold text-lg ${
+            className={`font-semibold text-md ${
               difficulty.toLowerCase() === 'low'
                 ? 'text-green-600'
                 : difficulty.toLowerCase() === 'high'

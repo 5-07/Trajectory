@@ -98,10 +98,17 @@ import { JobGrid } from '@/components/JobGrid';
 export default function Home() {
     return (
   <>
+  <div className="bg-black">
+  {/* Background rings */}
+  <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="w-[620px] h-[620px] hero-ring"></div>
+      <div className="w-[820px] h-[820px] hero-ring"></div>
+      <div className="w-[1020px] h-[1020px] hero-ring"></div>
+      <div className="w-[1220px] h-[1220px] hero-ring"></div>
+    </div>
 
-    <HeadComp />  
-    
     <JobGrid />
+    </div>
   </>
 );
 };
